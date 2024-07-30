@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Video Converter</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="/manifest.json">
-
-    
+    <link rel="manifest" href="manifest.json"> <!-- Corrected path -->
 </head>
 <body>
     <header id="header">
@@ -34,18 +32,17 @@
             <!-- The result and download link will be inserted here -->
         </div>
     </main>
-    <script src="scripts.js"></script>
+    <script src="scripts.js"></script> <!-- Adjust if necessary -->
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            navigator.serviceWorker.register('service-worker.js').then(registration => { <!-- Corrected path -->
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, err => {
               console.log('ServiceWorker registration failed: ', err);
             });
           });
         }
-        </script>
-        
+    </script>
 </body>
 </html>
