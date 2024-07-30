@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressContainer.querySelector('span').textContent = 'Preparing conversion...';
 
-        fetch('/convert', {
+        fetch('https://yt2mpx.herokuapp.com/convert', {  // Updated line
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
