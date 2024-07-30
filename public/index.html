@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+
+    
+</head>
+<body>
+    <header id="header">
+        <div>
+            <a href="#" id="theme-toggle">Light</a>
+        </div>
+    </header>
+    <main>
+        <form id="conversion-form">
+            <div>
+                <a href="#" id="format-toggle">video to MP4</a>
+            </div>
+            <div>
+                <label for="url">YouTube URL:</label>
+                <input type="text" id="url" placeholder="Enter YouTube URL">
+            </div>
+          
+            <div id="progress-container">
+                <span>Initializing conversion...</span>
+            </div>
+            <button type="submit">Convert</button>
+        </form>
+        <div id="result">
+            <!-- The result and download link will be inserted here -->
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+        </script>
+        
+</body>
+</html>
